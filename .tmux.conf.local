@@ -286,6 +286,11 @@ set -g mouse on
 # set -g prefix C-a
 # bind C-a send-prefix
 
+bind < resize-pane -L  20 
+bind > resize-pane -R  20
+bind ( resize-pane -D  20 
+bind )  resize-pane -U  20 
+
 # move status line to top
 #set -g status-position top
 # List of plugins
@@ -312,6 +317,10 @@ bind R  run "cut -c3- ~/.tmux.conf | sh -s _urlview #{pane_id}"
 # -- facebook pathpicker -------------------------------------------------------
 
 bind P  run "cut -c3- ~/.tmux.conf | sh -s _fpp #{pane_id}"
+#----tmux continumm option----------------------------
+set -g @continuum-boot 'on'
+set -g @continuum-boot-options 'iterm,fullscreen' 
+
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run-shell '~/.tmux/plugins/tpm/tpm'
